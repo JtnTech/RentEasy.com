@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Product - RentEasy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body
+    class="bg-white dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen pb-24 font-display antialiased flex flex-col">
+    <!-- Header -->
+    <header
+        class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 px-4 md:px-8 py-3 shadow-sm h-16 flex items-center">
+        <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="dashboard.html"
+                    class="flex items-center justify-center p-2 rounded-full hover:bg-slate-100 transition-colors">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </a>
+                <h1 class="text-xl font-bold tracking-tight text-slate-900 hidden md:block">
+                    Rent<span class="text-primary">Easy</span>
+                </h1>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 text-slate-400 hover:text-red-500 transition-colors">
+                    <span class="material-symbols-outlined">favorite</span>
+                </button>
+                <a href="cart.html" class="relative cursor-pointer hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-slate-600">shopping_cart</span>
+                    <span
+                        class="cart-badge absolute -top-2 -right-2 bg-primary text-[10px] font-bold px-1.5 rounded-full text-slate-900 ring-2 ring-white">2</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto w-full pt-4 md:pt-8 md:p-8 flex flex-col md:flex-row gap-8 lg:gap-16">
+
+        <!-- Product Image Gallery (Desktop Split) -->
+        <div class="w-full md:w-1/2 flex flex-col gap-4 px-4 md:px-0">
+            <div class="w-full aspect-square bg-slate-100 rounded-3xl overflow-hidden relative">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpdAy-mbo5xCKD1rQaJZLq06fHwajxvCVmKOB4Nj-eIlqYKp2qVImgEeqnFlFAVCA2S9_vPd99k9oMS_K-TI51FJ0uh-gLhwpAYoctq7BpcoKLNCDhtqttGrIiF12TbabTKqqbLwgbOT7xRlB296IOodHJbak7bn2J4NLPxFsQ7VxViJS4d6EHEbWzhUkYwqjAv4X6uJJyxqmmeWS3Yh6HbB0cSg9zx2SZt73zo2JJa2jk2RIhTzKGTlfMJB0oxamiSImhMD5Dx_yO"
+                    class="w-full h-full object-cover" alt="Casio Calculator" />
+                <div
+                    class="absolute top-4 left-4 bg-primary text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-white/50 backdrop-blur-md">
+                    VERIFIED EXCELLENT
+                </div>
+            </div>
+            <!-- Thumbnails (Desktop mostly) -->
+            <div class="hidden md:flex gap-4">
+                <div class="w-20 h-20 rounded-xl bg-slate-200 border-2 border-primary overflow-hidden cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpdAy-mbo5xCKD1rQaJZLq06fHwajxvCVmKOB4Nj-eIlqYKp2qVImgEeqnFlFAVCA2S9_vPd99k9oMS_K-TI51FJ0uh-gLhwpAYoctq7BpcoKLNCDhtqttGrIiF12TbabTKqqbLwgbOT7xRlB296IOodHJbak7bn2J4NLPxFsQ7VxViJS4d6EHEbWzhUkYwqjAv4X6uJJyxqmmeWS3Yh6HbB0cSg9zx2SZt73zo2JJa2jk2RIhTzKGTlfMJB0oxamiSImhMD5Dx_yO"
+                        class="w-full h-full object-cover" />
+                </div>
+                <div
+                    class="w-20 h-20 rounded-xl bg-slate-100 hover:border-2 border-slate-300 overflow-hidden cursor-pointer flex items-center justify-center text-slate-400">
+                    <span class="material-symbols-outlined">image</span>
+                </div>
+                <div
+                    class="w-20 h-20 rounded-xl bg-slate-100 hover:border-2 border-slate-300 overflow-hidden cursor-pointer flex items-center justify-center text-slate-400">
+                    <span class="material-symbols-outlined">image</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="w-full md:w-1/2 flex flex-col px-4 md:px-0">
+            <!-- Brand / Tag -->
+            <div class="flex items-center gap-2 text-sm font-semibold text-slate-500 mb-2 uppercase tracking-wider">
+                Electronics <span class="bg-slate-300 w-1 h-1 rounded-full"></span> Casio
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-2 leading-tight">Casio FX-991EX Classwiz
+            </h1>
+
+            <div class="flex items-center gap-2 mb-6">
+                <div class="flex text-amber-400">
+                    <span class="material-symbols-outlined fill-1 text-[20px]">star</span>
+                    <span class="material-symbols-outlined fill-1 text-[20px]">star</span>
+                    <span class="material-symbols-outlined fill-1 text-[20px]">star</span>
+                    <span class="material-symbols-outlined fill-1 text-[20px]">star</span>
+                    <span class="material-symbols-outlined fill-1 text-[20px]">star_half</span>
+                </div>
+                <span class="text-sm font-semibold text-slate-600">4.8 (24 Reviews)</span>
+            </div>
+
+            <!-- Pricing Box -->
+            <div class="bg-slate-50 border border-slate-100 rounded-3xl p-6 mb-8 flex flex-col gap-4">
+                <div class="flex justify-between items-end border-b border-slate-200 pb-4">
+                    <div>
+                        <p class="text-sm text-slate-500 font-medium mb-1">Semester Plan</p>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-4xl font-extrabold text-primary drop-shadow-sm">₹125</span>
+                            <span class="text-slate-400 font-medium">/sem</span>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-slate-400 line-through">Retail: ₹1,250</span>
+                        <div class="text-xs font-bold text-green-600 bg-green-100 px-2 py-1 rounded mt-1">Student 90%
+                            OFF</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 text-sm text-slate-600 font-medium">
+                    <span class="material-symbols-outlined text-[18px] text-orange-500">lock</span>
+                    Refundable Deposit: ₹150
+                </div>
+            </div>
+
+            <!-- Specifics -->
+            <div class="mb-8">
+                <h3 class="font-bold text-lg mb-4">Description</h3>
+                <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-4">
+                    Non-programmable scientific calculator recommended for engineering students. Features
+                    high-resolution LCD, spreadsheet function, and QR code generation. In pristine condition with
+                    original cover.
+                </p>
+                <ul class="text-sm text-slate-600 space-y-2 font-medium">
+                    <li class="flex items-center gap-2"><span
+                            class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span> 552
+                        Functions</li>
+                    <li class="flex items-center gap-2"><span
+                            class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span> Permitted
+                        in University Exams</li>
+                    <li class="flex items-center gap-2"><span
+                            class="material-symbols-outlined text-green-500 text-[18px]">check_circle</span> Fresh
+                        batteries installed</li>
+                </ul>
+            </div>
+
+            <!-- Owner Profile -->
+            <div
+                class="bg-white border border-slate-200 rounded-2xl p-4 flex items-center justify-between mb-8 md:mb-0 hover:border-primary transition-colors cursor-pointer group">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-500 group-hover:bg-primary/20 group-hover:text-primary transition-colors">
+                        KV</div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-wide">Listed By</p>
+                        <h4 class="font-bold text-slate-800">Karan Verma</h4>
+                        <div class="flex items-center gap-1 text-[10px] text-green-600 font-bold mt-0.5">
+                            <span class="material-symbols-outlined text-[12px]">verified</span> Verified Student
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-slate-100">
+                    <span class="material-symbols-outlined text-slate-400">chat</span>
+                </div>
+            </div>
+
+            <!-- Fixed Add to Cart Bottom (Mobile) / Normal (Desktop) -->
+            <div
+                class="fixed bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-md border-t border-slate-200 md:static md:bg-transparent md:border-t-0 md:p-0 mt-auto z-[100]">
+                <div class="max-w-7xl mx-auto flex gap-4">
+                    <div class="hidden md:flex items-center bg-slate-100 rounded-2xl p-1 border border-slate-200">
+                        <button
+                            class="w-12 h-full flex items-center justify-center text-slate-500 hover:text-slate-800"><span
+                                class="material-symbols-outlined">remove</span></button>
+                        <span class="w-10 text-center font-bold text-lg">1</span>
+                        <button
+                            class="w-12 h-full flex items-center justify-center text-slate-500 hover:text-slate-800"><span
+                                class="material-symbols-outlined">add</span></button>
+                    </div>
+                    <button
+                        class="add-to-cart-btn flex-1 bg-slate-900 text-white hover:bg-slate-800 font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-[0.98] flex items-center justify-center gap-2 md:text-lg">
+                        <span class="material-symbols-outlined">add_shopping_cart</span>
+                        Pay securely
+                        <span class="font-normal opacity-70 ml-2 hidden md:inline">• ₹125</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Padding for mobile fixed bar -->
+            <div class="h-20 md:hidden"></div>
+
+            <!-- Global Watermark Credit Bottom -->
+            <div class="mt-8 md:mt-4 mb-4 flex justify-center md:justify-start w-full opacity-70">
+                <p class="text-[10px] md:text-xs text-slate-400 font-medium">Developed by <span
+                        class="animated-developer">Jatin Kumar</span></p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

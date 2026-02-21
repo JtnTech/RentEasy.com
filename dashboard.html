@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RentEasy - Explore</title>
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS and Interactions -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="js/products.js"></script>
+</head>
+
+<body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen pb-32 md:pb-0 font-display antialiased flex flex-col">
+    <!-- Desktop & Mobile Header -->
+    <header
+        class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 md:px-8 py-3 shadow-sm h-16 md:h-20 flex items-center">
+        <div class="max-w-[1400px] mx-auto w-full flex items-center justify-between gap-4">
+
+            <div class="flex items-center gap-2 lg:gap-8 flex-shrink-0">
+                <a href="index.html" class="text-xl md:text-2xl font-800 tracking-tight text-slate-900 dark:text-white">
+                    Rent<span class="text-primary">Easy</span>
+                </a>
+            </div>
+
+            <!-- Central Search Bar (Desktop dominant) -->
+            <div
+                class="hidden md:block flex-1 max-w-md w-full mx-auto relative group transform transition-all focus-within:scale-[1.02]">
+                <span
+                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+                <input id="search-input"
+                    class="w-full pl-12 pr-4 py-2.5 bg-slate-100 border border-transparent rounded-xl focus:border-primary/50 focus:bg-white focus:ring-4 focus:ring-primary/10 text-sm outline-none transition-all shadow-inner placeholder:text-slate-400"
+                    placeholder="Search items..." type="text" />
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center justify-center gap-6 text-sm font-semibold flex-1">
+                <a href="index.html" class="text-slate-500 hover:text-primary transition-colors">Home</a>
+                <a href="dashboard.html" class="text-slate-900 border-b-2 border-primary pb-1">Explore</a>
+                <a href="#" class="text-slate-500 hover:text-primary transition-colors">My Rentals</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="flex items-center gap-3 md:gap-6 flex-shrink-0 justify-end flex-1 md:flex-none">
+                <a href="cart.html" class="relative cursor-pointer hover:scale-110 transition-transform p-1">
+                    <span class="material-symbols-outlined text-slate-600 dark:text-slate-300">shopping_cart</span>
+                    <span
+                        class="cart-badge absolute -top-1 -right-1 md:-right-2 bg-primary text-[10px] font-bold px-1.5 rounded-full text-slate-900 ring-2 ring-white">2</span>
+                </a>
+                <a href="login.html"
+                    class="hidden md:flex items-center justify-center w-10 h-10 border border-slate-200 hover:border-primary rounded-full hover:bg-slate-50 transition-colors">
+                    <span class="material-symbols-outlined text-slate-500">person</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="flex-1 w-full max-w-[1400px] mx-auto flex">
+
+        <!-- Desktop Sidebar (Hidden on mobile) -->
+        <aside
+            class="hidden lg:block w-64 flex-shrink-0 border-r border-slate-200 p-6 sticky top-20 h-[calc(100vh-80px)] overflow-y-auto">
+            <div class="mb-8">
+                <h3 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Categories</h3>
+                <ul class="space-y-1" id="desktop-category-filters">
+                    <li><button data-category="all"
+                            class="category-filter-btn w-full flex items-center justify-between text-sm text-slate-900 font-semibold bg-primary/20 text-primary px-3 py-2 rounded-lg transition-colors"><span
+                                class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-[18px]">apps</span> All Items</span><span
+                                class="count-badge text-xs bg-white px-1.5 rounded text-slate-700 font-bold">5</span></button>
+                    </li>
+                    <li><button data-category="books"
+                            class="category-filter-btn w-full flex items-center justify-between text-sm text-slate-600 font-medium hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors"><span
+                                class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-[18px]">menu_book</span> Books</span><span
+                                class="count-badge hidden text-xs bg-white border border-slate-200 px-1.5 rounded text-slate-500 font-bold">1</span></button>
+                    </li>
+                    <li><button data-category="tech"
+                            class="category-filter-btn w-full flex items-center justify-between text-sm text-slate-600 font-medium hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors"><span
+                                class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-[18px]">laptop_mac</span>
+                                Electronics</span><span
+                                class="count-badge hidden text-xs bg-white border border-slate-200 px-1.5 rounded text-slate-500 font-bold">1</span></button>
+                    </li>
+                    <li><button data-category="lab"
+                            class="category-filter-btn w-full flex items-center justify-between text-sm text-slate-600 font-medium hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors"><span
+                                class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-[18px]">science</span> Lab Gear</span><span
+                                class="count-badge hidden text-xs bg-white border border-slate-200 px-1.5 rounded text-slate-500 font-bold">1</span></button>
+                    </li>
+                    <li><button data-category="wheels"
+                            class="category-filter-btn w-full flex items-center justify-between text-sm text-slate-600 font-medium hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors"><span
+                                class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-[18px]">pedal_bike</span> Cycles</span><span
+                                class="count-badge hidden text-xs bg-white border border-slate-200 px-1.5 rounded text-slate-500 font-bold">1</span></button>
+                    </li>
+                    <li><button data-category="drafting"
+                            class="category-filter-btn w-full flex items-center justify-between text-sm text-slate-600 font-medium hover:bg-slate-50 px-3 py-2 rounded-lg transition-colors"><span
+                                class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-[18px]">draw</span> Drafting Gear</span><span
+                                class="count-badge hidden text-xs bg-white border border-slate-200 px-1.5 rounded text-slate-500 font-bold">1</span></button>
+                    </li>
+                </ul>
+            </div>
+
+            <h3 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider border-t border-slate-100 pt-6">
+                Filters</h3>
+
+            <div class="mb-6">
+                <p class="text-sm font-semibold text-slate-800 mb-3">Price Range</p>
+                <div class="flex items-center gap-2">
+                    <input type="number" placeholder="Min"
+                        class="w-full text-xs p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-primary" />
+                    <span class="text-slate-400">-</span>
+                    <input type="number" placeholder="Max"
+                        class="w-full text-xs p-2 bg-slate-50 border border-slate-200 rounded-lg outline-none focus:border-primary" />
+                </div>
+            </div>
+
+            <div>
+                <p class="text-sm font-semibold text-slate-800 mb-2">Availability</p>
+                <label class="flex items-center gap-2 text-sm text-slate-600 mb-2 cursor-pointer">
+                    <input type="checkbox" checked
+                        class="rounded text-primary focus:ring-primary/20 cursor-pointer border-slate-300" /> Available
+                    Now
+                </label>
+            </div>
+
+            <button id="apply-filters-btn"
+                class="w-full mt-6 bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-lg text-xs transition-colors tracking-wide active:scale-[0.98]">
+                APPLY FILTERS
+            </button>
+        </aside>
+
+        <main class="flex-1 w-full bg-slate-50 p-4 md:p-6 lg:p-8 overflow-x-hidden">
+
+            <!-- Mobile Horizontal Categories Map (Hidden on Desktop) -->
+            <div class="flex lg:hidden overflow-x-auto gap-4 py-2 mb-6 no-scrollbar snap-x"
+                id="mobile-category-filters">
+                <button data-category="all"
+                    class="mobile-cat-btn snap-start flex flex-col items-center gap-1.5 min-w-[72px] group block">
+                    <div
+                        class="icon-circle w-14 h-14 rounded-full bg-slate-900 border-2 border-slate-900 flex items-center justify-center text-white shadow-sm ring-2 ring-offset-2 ring-primary transition-all">
+                        <span class="material-symbols-outlined text-2xl">apps</span>
+                    </div>
+                    <span class="text-xs font-bold text-slate-900">All</span>
+                </button>
+                <button data-category="books"
+                    class="mobile-cat-btn snap-start flex flex-col items-center gap-1.5 min-w-[72px] group block">
+                    <div
+                        class="icon-circle w-14 h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 group-hover:border-primary transition-colors shadow-sm">
+                        <span class="material-symbols-outlined text-2xl">menu_book</span>
+                    </div>
+                    <span class="text-xs font-medium text-slate-600">Books</span>
+                </button>
+                <button data-category="tech"
+                    class="mobile-cat-btn snap-start flex flex-col items-center gap-1.5 min-w-[72px] group block">
+                    <div
+                        class="icon-circle w-14 h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 group-hover:border-primary transition-colors shadow-sm">
+                        <span class="material-symbols-outlined text-2xl">devices</span>
+                    </div>
+                    <span class="text-xs font-medium text-slate-600">Tech</span>
+                </button>
+                <button data-category="lab"
+                    class="mobile-cat-btn snap-start flex flex-col items-center gap-1.5 min-w-[72px] group block">
+                    <div
+                        class="icon-circle w-14 h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 group-hover:border-primary transition-colors shadow-sm">
+                        <span class="material-symbols-outlined text-2xl">science</span>
+                    </div>
+                    <span class="text-xs font-medium text-slate-600">Lab Coat</span>
+                </button>
+                <button data-category="wheels"
+                    class="mobile-cat-btn snap-start flex flex-col items-center gap-1.5 min-w-[72px] group block">
+                    <div
+                        class="icon-circle w-14 h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 group-hover:border-primary transition-colors shadow-sm">
+                        <span class="material-symbols-outlined text-2xl">pedal_bike</span>
+                    </div>
+                    <span class="text-xs font-medium text-slate-600">Cycles</span>
+                </button>
+                <button data-category="drafting"
+                    class="mobile-cat-btn snap-start flex flex-col items-center gap-1.5 min-w-[72px] group block">
+                    <div
+                        class="icon-circle w-14 h-14 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 group-hover:border-primary transition-colors shadow-sm">
+                        <span class="material-symbols-outlined text-2xl">draw</span>
+                    </div>
+                    <span class="text-xs font-medium text-slate-600">Drafting</span>
+                </button>
+            </div>
+
+            <!-- Mobile Search Bar -->
+            <div class="md:hidden relative group mb-6">
+                <span
+                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl z-10">search</span>
+                <input id="mobile-search-input"
+                    class="w-full pl-12 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:border-primary/50 focus:ring-4 focus:ring-primary/10 text-sm outline-none transition-all shadow-sm placeholder:text-slate-400"
+                    placeholder="Search for items..." type="text" />
+            </div>
+
+            <!-- Page Title Area (Desktop & Mobile) -->
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-xl md:text-3xl font-extrabold text-slate-900 tracking-tight"
+                        id="active-category-title">All Student Essentials</h2>
+                    <p class="text-slate-500 text-sm mt-1">Huge student discounts — Rent for ~10-15% of retail price</p>
+                </div>
+
+                <div class="hidden md:flex items-center gap-3">
+                    <label class="text-sm font-semibold text-slate-500">Sort by:</label>
+                    <select
+                        class="bg-white border border-slate-200 outline-none rounded-lg text-sm px-3 py-2 shadow-sm font-medium focus:border-primary h-10 w-40">
+                        <option>Recommended</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest Arrivals</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Empty State Container (Hidden by default) -->
+            <div id="empty-state" class="hidden py-16 flex flex-col items-center justify-center text-center w-full">
+                <span class="material-symbols-outlined text-6xl text-slate-300 mb-4">search_off</span>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">No items found</h3>
+                <p class="text-slate-500">Try adjusting your filters or category selection.</p>
+            </div>
+
+            <!-- Grid Layout Desktop & Mobile -->
+            <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 md:gap-5"
+                id="product-grid">
+                <!-- Products dynamically injected via js/products.js -->
+            </div>
+
+            <!-- Pagination (Desktop) -->
+            <div class="hidden md:flex justify-center items-center mt-12 gap-2" id="pagination-control">
+                <button
+                    class="w-10 h-10 border border-slate-200 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-300 bg-white"><span
+                        class="material-symbols-outlined text-sm">chevron_left</span></button>
+                <button
+                    class="w-10 h-10 border border-primary text-slate-900 bg-primary/10 font-bold rounded-lg flex items-center justify-center text-sm">1</button>
+                <button
+                    class="w-10 h-10 border border-slate-200 rounded-lg flex items-center justify-center text-slate-600 hover:bg-slate-50 text-sm font-medium bg-white">2</button>
+                <button
+                    class="w-10 h-10 border border-slate-200 rounded-lg flex items-center justify-center text-slate-600 hover:bg-slate-50 text-sm font-medium bg-white">3</button>
+                <button
+                    class="w-10 h-10 border border-slate-200 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-300 bg-white"><span
+                        class="material-symbols-outlined text-sm">chevron_right</span></button>
+            </div>
+
+            <!-- Global Watermark Credit Bottom -->
+            <div class="mt-16 mb-4 flex justify-center w-full">
+                <p class="text-xs text-slate-400 font-medium">Developed by <span class="animated-developer">Jatin
+                        Kumar</span></p>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 px-1 py-2 flex items-center justify-between z-50 shadow-lg pb-safe pt-3 w-full">
+        <a class="flex-1 flex flex-col items-center gap-1 text-slate-400 hover:text-slate-900 transition-colors"
+            href="index.html">
+            <span class="material-symbols-outlined text-xl">home</span>
+            <span class="text-[10px] font-medium">Home</span>
+        </a>
+        <a class="flex-1 flex flex-col items-center gap-1 text-primary transition-colors text-center"
+            href="dashboard.html">
+            <span class="material-symbols-outlined text-xl fill-1">dashboard</span>
+            <span class="text-[10px] font-bold">Explore</span>
+        </a>
+        <a class="flex-1 flex flex-col items-center gap-1 text-slate-400 hover:text-slate-900 transition-colors relative"
+            href="cart.html">
+            <span class="material-symbols-outlined text-xl">shopping_cart</span>
+            <span class="text-[10px] font-medium">Cart</span>
+            <span
+                class="cart-badge absolute -top-1 left-1/2 ml-1 bg-primary text-[10px] text-slate-900 font-bold px-1.5 rounded-full shadow-sm ring-2 ring-white">2</span>
+        </a>
+        <a class="flex-1 flex flex-col items-center gap-1 text-slate-400 hover:text-slate-900 transition-colors"
+            href="login.html">
+            <span class="material-symbols-outlined text-xl">person</span>
+            <span class="text-[10px] font-medium">Profile</span>
+        </a>
+    </nav>
+</body>
+
+</html>

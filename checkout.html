@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Secure Checkout - RentEasy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 font-display min-h-screen pb-12 antialiased flex flex-col">
+    <!-- Simple Header -->
+    <header
+        class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 px-4 md:px-8 py-3 shadow-sm h-16 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <a href="cart.html"
+                class="flex items-center justify-center p-2 rounded-full hover:bg-slate-100 transition-colors">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </a>
+            <h1 class="text-xl font-bold tracking-tight text-slate-900 hidden md:block">
+                Secure Checkout
+            </h1>
+        </div>
+        <div class="flex items-center gap-2 text-slate-500 font-bold text-sm">
+            <span class="material-symbols-outlined text-green-500">lock</span> Secure Payment
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto w-full p-4 md:p-8 flex flex-col md:flex-row gap-8">
+
+        <!-- Payment Details Form -->
+        <div class="flex-1 space-y-6">
+
+            <!-- Delivery Options -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100 relative overflow-hidden">
+                <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span
+                        class="bg-primary/20 text-primary w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                    Delivery Details
+                </h2>
+
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <label
+                        class="relative flex flex-col p-4 cursor-pointer border-2 border-primary bg-primary/5 text-slate-900 rounded-2xl group transition-all">
+                        <input type="radio" name="delivery" class="absolute opacity-0" checked>
+                        <span class="material-symbols-outlined text-primary mb-2 text-3xl">meeting_room</span>
+                        <span class="font-bold text-sm">Hostel Delivery</span>
+                        <span class="text-xs text-slate-500 mt-1">Delivered to your block</span>
+                        <span
+                            class="absolute top-4 right-4 material-symbols-outlined text-primary text-xl">check_circle</span>
+                    </label>
+                    <label
+                        class="relative flex flex-col p-4 cursor-pointer border-2 border-slate-200 hover:border-primary/50 text-slate-500 rounded-2xl group transition-all">
+                        <input type="radio" name="delivery" class="absolute opacity-0">
+                        <span
+                            class="material-symbols-outlined mb-2 text-3xl group-hover:text-primary transition-colors">location_on</span>
+                        <span class="font-bold text-sm text-slate-700">Campus Pickup</span>
+                        <span class="text-xs mt-1">Collect at Academic Block</span>
+                    </label>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex flex-col w-full group form-input-focus relative">
+                        <input required
+                            class="peer form-input flex w-full rounded-2xl text-slate-900 focus:outline-0 focus:ring-2 focus:ring-primary/50 border-2 border-slate-200 bg-slate-50 pt-6 pb-2 px-4 text-sm font-normal transition-all placeholder-transparent"
+                            id="block-name" placeholder="Hostel Block (e.g. Block 12, FC)" type="text"
+                            value="Block 15, FC" />
+                        <label for="block-name"
+                            class="absolute left-4 top-4 text-slate-400 text-sm transition-all peer-focus:text-primary peer-focus:text-[10px] peer-focus:-translate-y-3 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:-translate-y-3 font-semibold cursor-text">Hostel
+                            Block & Room</label>
+                    </div>
+
+                    <div class="flex flex-col w-full group form-input-focus relative">
+                        <input required
+                            class="peer form-input flex w-full rounded-2xl text-slate-900 focus:outline-0 focus:ring-2 focus:ring-primary/50 border-2 border-slate-200 bg-slate-50 pt-6 pb-2 px-4 text-sm font-normal transition-all placeholder-transparent"
+                            id="phone" placeholder="Phone Number" type="tel" value="+91 98765 43210" />
+                        <label for="phone"
+                            class="absolute left-4 top-4 text-slate-400 text-sm transition-all peer-focus:text-primary peer-focus:text-[10px] peer-focus:-translate-y-3 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:-translate-y-3 font-semibold cursor-text">Phone
+                            Number</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+                <h2 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <span
+                        class="bg-primary/20 text-primary w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                    Payment Method
+                </h2>
+
+                <div class="space-y-3">
+                    <!-- UPI -->
+                    <label
+                        class="flex items-center justify-between p-4 border-2 border-primary bg-primary/5 rounded-2xl cursor-pointer">
+                        <div class="flex items-center gap-4">
+                            <input type="radio" name="payment"
+                                class="w-5 h-5 text-primary border-slate-300 focus:ring-primary" checked>
+                            <div class="flex flex-col">
+                                <span class="font-bold text-slate-900 text-sm">UPI (GPay, PhonePe, Paytm)</span>
+                                <span class="text-xs text-slate-500">Zero transaction fees</span>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-primary text-2xl">qr_code_scanner</span>
+                    </label>
+
+                    <!-- Card -->
+                    <label
+                        class="flex items-center justify-between p-4 border-2 border-slate-200 hover:border-primary/50 rounded-2xl cursor-pointer transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <input type="radio" name="payment"
+                                class="w-5 h-5 text-primary border-slate-300 focus:ring-primary">
+                            <div class="flex flex-col">
+                                <span class="font-bold text-slate-700 group-hover:text-slate-900 text-sm">Credit / Debit
+                                    Card</span>
+                                <span class="text-xs text-slate-500 group-hover:text-slate-600">Visa, Mastercard,
+                                    RuPay</span>
+                            </div>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-slate-400 group-hover:text-primary text-2xl transition-colors">credit_card</span>
+                    </label>
+
+                    <!-- Net Banking -->
+                    <label
+                        class="flex items-center justify-between p-4 border-2 border-slate-200 hover:border-primary/50 rounded-2xl cursor-pointer transition-colors group">
+                        <div class="flex items-center gap-4">
+                            <input type="radio" name="payment"
+                                class="w-5 h-5 text-primary border-slate-300 focus:ring-primary">
+                            <div class="flex flex-col">
+                                <span class="font-bold text-slate-700 group-hover:text-slate-900 text-sm">Net
+                                    Banking</span>
+                                <span class="text-xs text-slate-500 group-hover:text-slate-600">All major banks
+                                    supported</span>
+                            </div>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-slate-400 group-hover:text-primary text-2xl transition-colors">account_balance</span>
+                    </label>
+                </div>
+
+                <!-- Expanded UPI input -->
+                <div id="upi-input-div" class="mt-4 p-4 bg-slate-50 rounded-2xl border border-slate-200">
+                    <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-2">Enter UPI ID</p>
+                    <div class="flex gap-2">
+                        <input type="text"
+                            class="flex-1 bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
+                            placeholder="student@okicici">
+                        <button
+                            class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-3 rounded-xl text-xs transition-colors shadow-sm">Verify</button>
+                    </div>
+                    <div
+                        class="flex items-center gap-1 mt-2 text-[10px] text-green-600 font-bold hidden verified-badge">
+                        <span class="material-symbols-outlined text-[14px]">check_circle</span> Verified UPI Handle
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Global Watermark Credit Bottom -->
+            <div class="mt-8 mb-4 flex justify-start w-full">
+                <p class="text-xs text-slate-400 font-medium">Developed by <span class="animated-developer">Jatin
+                        Kumar</span></p>
+            </div>
+
+        </div>
+
+        <!-- Checkout Summary Sidebar -->
+        <div class="w-full md:w-80 lg:w-96 flex-shrink-0 relative">
+            <div
+                class="bg-slate-900 text-white rounded-3xl p-6 md:p-8 shadow-xl md:sticky md:top-24 overflow-hidden relative">
+                <!-- Decorative background elements -->
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary rounded-full blur-[80px] opacity-20"></div>
+                <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-blue-500 rounded-full blur-[80px] opacity-20">
+                </div>
+
+                <div class="relative z-10">
+                    <h2 class="font-bold text-lg mb-6 flex items-center justify-between">
+                        Order Summary
+                        <span class="text-xs bg-white/10 px-2 py-1 rounded border border-white/20">2 Items</span>
+                    </h2>
+
+                    <div class="space-y-4 mb-6 border-b border-slate-700 pb-6">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-300 font-medium">Engineering Mechanics</span>
+                            <span class="font-bold">₹85</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-300 font-medium">Casio FX-991EX</span>
+                            <span class="font-bold">₹125</span>
+                        </div>
+                        <div class="flex justify-between text-sm pt-2">
+                            <span class="text-slate-400">Subtotal</span>
+                            <span class="font-medium text-slate-300">₹210</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-400 flex items-center gap-1">
+                                Refundable Deposit
+                            </span>
+                            <span class="font-medium text-slate-300">₹250</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-400">Platform Fee</span>
+                            <span class="font-medium text-slate-300">₹15</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <div class="flex justify-between items-end">
+                            <span class="font-semibold text-slate-300">Amount Payable</span>
+                            <div class="text-right">
+                                <div class="font-extrabold text-3xl text-primary drop-shadow-sm">₹475</div>
+                                <div class="text-[10px] text-slate-400 mt-1">Includes ₹250 refundable deposit</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-[10px] text-slate-400 text-center mb-4 leading-relaxed">
+                        By completing this payment you agree to RentEasy's <a href="#"
+                            class="underline hover:text-white">Rental Agreement</a> and <a href="#"
+                            class="underline hover:text-white">Refund Policy</a>.
+                    </p>
+
+                    <button onclick="window.location.href='success.html'"
+                        class="w-full bg-primary text-slate-900 font-bold py-4 rounded-xl shadow-lg shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group">
+                        Pay ₹475 Securely
+                        <span
+                            class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+
+                    <div class="flex items-center justify-center gap-4 mt-6 opacity-60 grayscale filter">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/1024px-UPI-Logo-vector.svg.png"
+                            class="h-4" alt="UPI">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png"
+                            class="h-3" alt="Visa">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png"
+                            class="h-5" alt="Mastercard">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

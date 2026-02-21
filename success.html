@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Payment Successful - RentEasy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Confetti Script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body class="bg-slate-50 font-display min-h-screen antialiased flex flex-col items-center justify-center p-4">
+
+    <!-- Success Container -->
+    <div
+        class="bg-white max-w-md w-full rounded-3xl p-8 relative overflow-hidden shadow-2xl shadow-slate-200/50 border border-slate-100 text-center animate-[scaleIn_0.5s_ease-out]">
+
+        <!-- Decorative Background Pattern -->
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <div class="absolute -top-16 -right-16 w-48 h-48 bg-primary rounded-full blur-[80px]"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 flex flex-col items-center">
+
+            <div
+                class="w-24 h-24 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-6 shadow-inner ring-8 ring-green-50">
+                <span class="material-symbols-outlined text-6xl">check_circle</span>
+            </div>
+
+            <h1 class="text-3xl font-extrabold text-slate-900 mb-2">Order Confirmed!</h1>
+            <p class="text-slate-500 text-sm mb-8 leading-relaxed">
+                Your payment of <span class="font-bold text-slate-800">₹475</span> was successful. The items have been
+                reserved for you.
+            </p>
+
+            <!-- Order Details Box -->
+            <div class="bg-slate-50 w-full rounded-2xl p-5 mb-8 border border-slate-100 text-left">
+                <div class="flex justify-between items-center mb-4 pb-4 border-b border-slate-200">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Transaction ID</span>
+                    <span class="text-sm font-semibold text-slate-800 font-mono">TXN-RE984712A</span>
+                </div>
+
+                <div class="space-y-3 relative">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 bg-primary/20 rounded-xl flex items-center justify-center text-primary flex-shrink-0">
+                            <span class="material-symbols-outlined text-[20px]">inventory_2</span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-medium">Items Rented</p>
+                            <p class="text-sm font-bold text-slate-900">Engineering Mechanics, Casio FX-991EX</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-500 flex-shrink-0">
+                            <span class="material-symbols-outlined text-[20px]">local_shipping</span>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-medium">Delivery Mode</p>
+                            <p class="text-sm font-bold text-slate-900">Hostel Delivery (Block 15, FC)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="w-full flex justify-between items-center gap-4">
+                <button onclick="window.location.href='dashboard.html'"
+                    class="flex-1 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 font-bold py-3.5 rounded-xl transition-colors shadow-sm text-sm">
+                    Keep Browsing
+                </button>
+                <button onclick="window.location.href='index.html'"
+                    class="flex-1 bg-slate-900 text-white hover:bg-slate-800 font-bold py-3.5 rounded-xl shadow-lg transition-transform active:scale-95 text-sm">
+                    Go Home
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Animation CSS -->
+    <style>
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <script>
+        // Trigger Confetti immediately on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            var duration = 3000;
+            var end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#FFE100', '#2563EB', '#10B981']
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#FFE100', '#2563EB', '#10B981']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        });
+    </script>
+</body>
+
+</html>

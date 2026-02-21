@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>RentEasy - Use More. Spend Less.</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body class="bg-white text-slate-900 font-display min-h-screen flex flex-col">
+    <!-- Desktop & Mobile Header -->
+    <header class="sticky top-0 z-50 bg-slate-900 border-b border-slate-800 px-4 md:px-8 py-4 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <h1 class="text-xl md:text-2xl font-800 tracking-tight">
+                    <span class="text-white">Rent</span><span class="text-primary">Easy</span>
+                </h1>
+            </div>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-10 text-sm font-semibold">
+                <a href="index.html"
+                    class="text-white border-b-2 border-primary pb-1 font-medium transition-colors">Home</a>
+                <a href="dashboard.html" class="text-slate-300 hover:text-primary transition-colors">Explore</a>
+                <a href="#" class="text-slate-300 hover:text-primary transition-colors">My Rentals</a>
+            </nav>
+
+            <!-- Actions Right Aligned -->
+            <div class="flex items-center gap-3 md:gap-6 flex-shrink-0 justify-end md:w-32">
+                <a href="cart.html" class="relative cursor-pointer hover:scale-110 transition-transform p-1 md:mr-2">
+                    <span
+                        class="material-symbols-outlined text-white hover:text-primary transition-colors">shopping_cart</span>
+                    <span
+                        class="cart-badge absolute -top-1 -right-2 bg-primary text-[10px] font-bold px-1.5 rounded-full text-slate-900 ring-2 ring-slate-900">2</span>
+                </a>
+                <a href="login.html"
+                    class="hidden md:flex items-center justify-center w-9 h-9 border border-slate-700 hover:border-slate-500 rounded-full hover:bg-slate-800 transition-colors">
+                    <span class="material-symbols-outlined text-slate-300 text-[20px]">person</span>
+                </a>
+                <a href="signup.html"
+                    class="hidden md:block text-slate-900 bg-primary font-semibold text-sm px-4 lg:px-5 py-2 lg:py-2.5 rounded-lg shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95 whitespace-nowrap">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 pb-24 md:pb-12 max-w-7xl mx-auto w-full">
+        <!-- Hero Section (Responsive) -->
+        <section class="px-4 py-8 md:py-16 @container">
+            <div
+                class="bg-slate-900 rounded-3xl relative overflow-hidden flex flex-col md:flex-row items-center border border-slate-800 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
+
+                <!-- Background Decoration -->
+                <div class="absolute inset-0 z-0 opacity-20">
+                    <div class="absolute -top-24 -left-24 w-64 h-64 bg-primary rounded-full blur-[100px]"></div>
+                    <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
+                </div>
+
+                <div class="relative z-20 w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
+                    <span
+                        class="text-primary font-bold tracking-wider uppercase text-xs mb-4 inline-block bg-primary/10 px-3 py-1 rounded-full w-fit">The
+                        Student Hub</span>
+                    <h2 class="text-white text-4xl md:text-6xl font-800 leading-[1.1] mb-6">
+                        Use More.<br /><span class="text-slate-400">Spend Less.</span>
+                    </h2>
+                    <p class="text-slate-400 text-sm md:text-lg mb-8 max-w-md leading-relaxed">Skip buying expensive
+                        college gear. Rent books, electronics, and cycles from verified students instantly.</p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="dashboard.html"
+                            class="bg-primary text-slate-900 text-center font-bold px-8 py-4 rounded-xl shadow-lg shadow-primary/20 hover:scale-105 transition-transform flex justify-center items-center gap-2 text-lg">
+                            Explore Rentals
+                            <span class="material-symbols-outlined">explore</span>
+                        </a>
+                        <a href="login.html"
+                            class="bg-white/10 text-white text-center font-bold px-8 py-4 rounded-xl hover:bg-white/20 transition-colors backdrop-blur-sm">
+                            List an Item
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image placeholder (Visible on Desktop mainly) -->
+                <div class="hidden md:flex relative z-20 w-1/2 p-8 justify-end items-center">
+                    <div
+                        class="w-full max-w-md aspect-square bg-slate-800/50 rounded-2xl border border-slate-700 backdrop-blur-sm flex flex-col items-center justify-center p-8">
+                        <span class="material-symbols-outlined text-6xl text-primary mb-4">devices</span>
+                        <h3 class="text-white text-xl font-bold text-center">Premium Gear</h3>
+                        <p class="text-slate-400 text-center text-sm mt-2">Available on your campus</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Bar -->
+        <section class="px-4 mb-12 md:mb-16 md:max-w-3xl md:mx-auto">
+            <div class="relative group shadow-lg shadow-slate-200/50 rounded-2xl bg-white border border-slate-100">
+                <span
+                    class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors text-2xl">search</span>
+                <input
+                    class="w-full pl-14 pr-32 py-5 bg-transparent border-none rounded-2xl focus:ring-4 focus:ring-primary/20 text-slate-700 text-lg placeholder:text-slate-400 transition-all outline-none"
+                    placeholder="Search books, cycles..." type="text" />
+                <button onclick="window.location.href='dashboard.html'"
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-slate-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
+                    Search
+                </button>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="px-4 mb-16">
+            <div class="flex items-center justify-between mb-8">
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900">Browse Categories</h3>
+                <a class="text-primary text-sm font-bold hover:underline" href="dashboard.html">View All</a>
+            </div>
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
+                <!-- Desktop flex map -->
+                <a href="dashboard.html"
+                    class="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 transition-colors group cursor-pointer border border-transparent hover:border-slate-100">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-slate-900 transition-all shadow-sm group-hover:shadow-md group-hover:scale-110">
+                        <span class="material-symbols-outlined text-3xl md:text-4xl">menu_book</span>
+                    </div>
+                    <span class="text-xs md:text-sm font-semibold text-slate-700 text-center">Books</span>
+                </a>
+                <a href="dashboard.html"
+                    class="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 transition-colors group cursor-pointer border border-transparent hover:border-slate-100">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-slate-900 transition-all shadow-sm group-hover:shadow-md group-hover:scale-110">
+                        <span class="material-symbols-outlined text-3xl md:text-4xl">calculate</span>
+                    </div>
+                    <span class="text-xs md:text-sm font-semibold text-slate-700 text-center">Calculators</span>
+                </a>
+                <a href="dashboard.html"
+                    class="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 transition-colors group cursor-pointer border border-transparent hover:border-slate-100">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-slate-900 transition-all shadow-sm group-hover:shadow-md group-hover:scale-110">
+                        <span class="material-symbols-outlined text-3xl md:text-4xl">pedal_bike</span>
+                    </div>
+                    <span class="text-xs md:text-sm font-semibold text-slate-700 text-center">Cycles</span>
+                </a>
+                <a href="dashboard.html"
+                    class="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 transition-colors group cursor-pointer border border-transparent hover:border-slate-100 hidden md:flex">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-slate-900 transition-all shadow-sm group-hover:shadow-md group-hover:scale-110">
+                        <span class="material-symbols-outlined text-3xl md:text-4xl">laptop_mac</span>
+                    </div>
+                    <span class="text-xs md:text-sm font-semibold text-slate-700 text-center">Electronics</span>
+                </a>
+                <a href="dashboard.html"
+                    class="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 transition-colors group cursor-pointer border border-transparent hover:border-slate-100 hidden md:flex">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-slate-900 transition-all shadow-sm group-hover:shadow-md group-hover:scale-110">
+                        <span class="material-symbols-outlined text-3xl md:text-4xl">science</span>
+                    </div>
+                    <span class="text-xs md:text-sm font-semibold text-slate-700 text-center">Lab Gear</span>
+                </a>
+                <a href="dashboard.html"
+                    class="flex flex-col items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 transition-colors group cursor-pointer border border-transparent hover:border-slate-100 hidden md:flex">
+                    <div
+                        class="w-16 h-16 md:w-20 md:h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-slate-900 transition-all shadow-sm group-hover:shadow-md group-hover:scale-110">
+                        <span class="material-symbols-outlined text-3xl md:text-4xl">weekend</span>
+                    </div>
+                    <span class="text-xs md:text-sm font-semibold text-slate-700 text-center">Room Essentials</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Rentals (Horizontal Scroll on mobile, Grid on Desktop) -->
+        <section class="mb-16">
+            <div class="px-4 flex items-center justify-between mb-6">
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900">Popular Near You</h3>
+                <a class="text-primary text-sm font-bold hover:underline" href="dashboard.html">Explore All</a>
+            </div>
+            <!-- Horizontal scroll mobile, grid desktop -->
+            <div
+                class="flex md:grid overflow-x-auto md:overflow-visible gap-4 md:gap-6 px-4 md:grid-cols-3 lg:grid-cols-4 no-scrollbar pb-6 snap-x">
+                <!-- Card 1 -->
+                <div onclick="window.location.href='product.html'"
+                    class="snap-start min-w-[200px] md:min-w-0 w-52 md:w-full flex-shrink-0 bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer group flex flex-col">
+                    <div class="h-40 md:h-48 bg-slate-200 bg-cover bg-center group-hover:scale-105 transition-transform duration-500 rounded-t-2xl relative"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIYVuErFrlmFD_BSl15IXQOyZF_uEXO--DgS13tgGEZ47l9BTKuaYU1aETtvuYUNQIpLF8-9IMJYY5I80mtuHOpY-uCuYP3BsLz6AOnebsQnMQLJ8At6BddJlL0o8rFgoVSvfSbdNYy4YXp04uvkpbrL4LKa-dJr01ifzXfsDh8I1eSedFZ6Qmub88emYkI1Cx-Ovt40ykoKkuopHvHaagMa8vMU1HusCBsCJuQxeVQjESGwz8jUDti58sS7JeNll7aehi-ma6e6Ec')">
+                        <div
+                            class="absolute top-2 right-2 bg-white/80 backdrop-blur-md p-1.5 rounded-full text-slate-400 hover:text-red-500 transition-colors">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white relative z-10 border-t border-slate-50 flex-1 flex flex-col">
+                        <h4
+                            class="text-base font-bold text-slate-800 line-clamp-1 group-hover:text-primary transition-colors">
+                            Thermodynamics</h4>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">Book • RK Rajput</p>
+                        <div class="flex items-end justify-between mt-auto">
+                            <div>
+                                <span class="text-xs text-slate-400 line-through">₹850</span>
+                                <div class="text-primary font-bold text-lg leading-none">₹249<span
+                                        class="text-xs text-slate-500 font-medium">/sem</span></div>
+                            </div>
+                            <button
+                                class="add-to-cart-btn bg-slate-100 text-slate-900 hover:bg-primary hover:text-slate-900 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
+                                <span class="material-symbols-outlined text-[18px]">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div onclick="window.location.href='product.html'"
+                    class="snap-start min-w-[200px] md:min-w-0 w-52 md:w-full flex-shrink-0 bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer group flex flex-col">
+                    <div class="h-40 md:h-48 bg-slate-200 bg-cover bg-center group-hover:scale-105 transition-transform duration-500 rounded-t-2xl relative"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpdAy-mbo5xCKD1rQaJZLq06fHwajxvCVmKOB4Nj-eIlqYKp2qVImgEeqnFlFAVCA2S9_vPd99k9oMS_K-TI51FJ0uh-gLhwpAYoctq7BpcoKLNCDhtqttGrIiF12TbabTKqqbLwgbOT7xRlB296IOodHJbak7bn2J4NLPxFsQ7VxViJS4d6EHEbWzhUkYwqjAv4X6uJJyxqmmeWS3Yh6HbB0cSg9zx2SZt73zo2JJa2jk2RIhTzKGTlfMJB0oxamiSImhMD5Dx_yO')">
+                        <div
+                            class="absolute top-2 left-0 bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded-r-full shadow-lg">
+                            HIGH DEMAND</div>
+                    </div>
+                    <div class="p-4 bg-white relative z-10 border-t border-slate-50 flex-1 flex flex-col">
+                        <h4
+                            class="text-base font-bold text-slate-800 line-clamp-1 group-hover:text-primary transition-colors">
+                            Casio FX-991EX</h4>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">Scientific Calculator</p>
+                        <div class="flex items-end justify-between mt-auto">
+                            <div>
+                                <span class="text-xs text-slate-400 line-through">₹1,250</span>
+                                <div class="text-primary font-bold text-lg leading-none">₹199<span
+                                        class="text-xs text-slate-500 font-medium">/sem</span></div>
+                            </div>
+                            <button
+                                class="add-to-cart-btn bg-slate-100 text-slate-900 hover:bg-primary hover:text-slate-900 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
+                                <span class="material-symbols-outlined text-[18px]">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div onclick="window.location.href='product.html'"
+                    class="snap-start min-w-[200px] md:min-w-0 w-52 md:w-full flex-shrink-0 bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer group flex flex-col">
+                    <div class="h-40 md:h-48 bg-slate-200 bg-cover bg-center group-hover:scale-105 transition-transform duration-500 rounded-t-2xl relative"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCT021JEIw-jHGRR2VnEq1j1ytHQqA1Dx6m35XKzxameFvdXZTFCYZyaMxq2GcHO0a25ABdRKjh8FVHO7ltac6ErMiL3YfRzL6KxupeI9HSNfQlUw_1jr1wXjO71Ra31IHLRKw8WMcT-IghvQ5XIjSr3sgVwn3NbkmXBmZqV8k_maJfbMh-WdxtpmNrrIwnOp1k-gfcSoz2EAY5ncrx-YL2XQ8OwYo3h0ePep3WOQhOrV_QS-Ob3eUoKMsL6LU02iPIIZCeFJ3GKxm3')">
+                        <div
+                            class="absolute top-2 left-0 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded-r-full shadow-lg">
+                            1 LEFT</div>
+                    </div>
+                    <div class="p-4 bg-white relative z-10 border-t border-slate-50 flex-1 flex flex-col">
+                        <h4
+                            class="text-base font-bold text-slate-800 line-clamp-1 group-hover:text-primary transition-colors">
+                            Hybrid Cycle 21G</h4>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">Transport • Daily</p>
+                        <div class="flex items-end justify-between mt-auto">
+                            <div>
+                                <span class="text-xs text-slate-400 line-through">₹250/d</span>
+                                <div class="text-primary font-bold text-lg leading-none">₹49<span
+                                        class="text-xs text-slate-500 font-medium">/day</span></div>
+                            </div>
+                            <button
+                                class="add-to-cart-btn bg-slate-100 text-slate-900 hover:bg-primary hover:text-slate-900 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
+                                <span class="material-symbols-outlined text-[18px]">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 (Hidden on Mobile) -->
+                <div onclick="window.location.href='product.html'"
+                    class="hidden md:flex snap-start md:min-w-0 w-full flex-shrink-0 bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer group flex-col">
+                    <div
+                        class="h-48 bg-slate-200 bg-cover bg-center group-hover:scale-105 transition-transform duration-500 rounded-t-2xl relative bg-slate-100 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-6xl text-slate-300">science</span>
+                    </div>
+                    <div class="p-4 bg-white relative z-10 border-t border-slate-50 flex-1 flex flex-col">
+                        <h4
+                            class="text-base font-bold text-slate-800 line-clamp-1 group-hover:text-primary transition-colors">
+                            Chemistry Lab Coat</h4>
+                        <p class="text-xs text-slate-500 mb-3 font-medium">Apparel • Large</p>
+                        <div class="flex items-end justify-between mt-auto">
+                            <div>
+                                <span class="text-xs text-slate-400 line-through">₹400</span>
+                                <div class="text-primary font-bold text-lg leading-none">₹99<span
+                                        class="text-xs text-slate-500 font-medium">/sem</span></div>
+                            </div>
+                            <button
+                                class="add-to-cart-btn bg-slate-100 text-slate-900 hover:bg-primary hover:text-slate-900 w-8 h-8 rounded-full flex items-center justify-center transition-colors">
+                                <span class="material-symbols-outlined text-[18px]">add</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why RentEasy & Trust Banner -->
+        <section class="px-4 py-12 md:py-20 bg-slate-50 rounded-3xl border border-slate-100 mx-4 md:mx-0 shadow-inner">
+            <div class="text-center mb-10 max-w-2xl mx-auto">
+                <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Why students choose RentEasy</h3>
+                <p class="text-slate-500 md:text-lg">Don't waste money for things you'll only use for one semester. Keep
+                    your budget for what matters.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
+                <div
+                    class="flex flex-col items-center text-center group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-3xl">currency_rupee</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-800 mb-2">Save 80% on Avg</h4>
+                    <p class="text-sm text-slate-500">Stop buying expensive textbooks new. Rent them for a fraction of
+                        the cost.</p>
+                </div>
+
+                <div
+                    class="flex flex-col items-center text-center group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-blue-500 text-3xl">verified</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-800 mb-2">Verified Students Only</h4>
+                    <p class="text-sm text-slate-500">Every user is verified via institutional email. Safe and secure
+                        community.</p>
+                </div>
+
+                <div
+                    class="flex flex-col items-center text-center group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        class="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-orange-500 text-3xl">local_shipping</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-slate-800 mb-2">Campus Delivery</h4>
+                    <p class="text-sm text-slate-500">Collect your items at designated campus spots within 500m of your
+                        hostel.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Desktop Footer -->
+    <footer class="hidden md:block border-t border-slate-200 bg-white py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-8 grid grid-cols-4 gap-8">
+            <div class="col-span-1">
+                <h2 class="text-2xl font-800 tracking-tight mb-4">
+                    <span class="text-slate-900">Rent</span><span class="text-primary">Easy</span>
+                </h2>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">The premier student-to-student rental marketplace
+                    making college life affordable and sustainable.</p>
+            </div>
+            <div>
+                <h5 class="font-bold text-slate-900 mb-4">Explore</h5>
+                <ul class="space-y-3 text-sm text-slate-500">
+                    <li><a href="dashboard.html" class="hover:text-primary transition-colors">All Categories</a></li>
+                    <li><a href="dashboard.html" class="hover:text-primary transition-colors">Textbooks</a></li>
+                    <li><a href="dashboard.html" class="hover:text-primary transition-colors">Calculators</a></li>
+                    <li><a href="dashboard.html" class="hover:text-primary transition-colors">Cycles & Transport</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-slate-900 mb-4">Account</h5>
+                <ul class="space-y-3 text-sm text-slate-500">
+                    <li><a href="login.html" class="hover:text-primary transition-colors">Log In</a></li>
+                    <li><a href="signup.html" class="hover:text-primary transition-colors">Sign Up</a></li>
+                    <li><a href="cart.html" class="hover:text-primary transition-colors">Your Cart</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-slate-900 mb-4">Help</h5>
+                <ul class="space-y-3 text-sm text-slate-500">
+                    <li><a href="#" class="hover:text-primary transition-colors">FAQ</a></li>
+                    <li><a href="guidelines.html" class="hover:text-primary transition-colors">Guidelines &
+                            Penalties</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+            <div class="flex items-center gap-4">
+                <p>&copy; 2026 RentEasy. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-600">Privacy</a>
+                    <a href="#" class="hover:text-slate-600">Terms</a>
+                </div>
+            </div>
+            <p class="font-medium text-slate-500">Developed by <span class="animated-developer">Jatin Kumar</span></p>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation Bar (Hidden on Desktop) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 px-1 py-2 flex items-center justify-between z-50 shadow-lg pb-safe pt-3 w-full">
+        <a class="flex-1 flex flex-col items-center gap-1 text-primary transition-colors" href="index.html">
+            <span class="material-symbols-outlined fill-1 text-xl">home</span>
+            <span class="text-[10px] font-bold">Home</span>
+        </a>
+        <a class="flex-1 flex flex-col items-center gap-1 text-slate-400 hover:text-slate-900 transition-colors"
+            href="dashboard.html">
+            <span class="material-symbols-outlined text-xl">search</span>
+            <span class="text-[10px] font-medium">Explore</span>
+        </a>
+        <a class="flex-1 flex flex-col items-center gap-1 text-slate-400 hover:text-slate-900 transition-colors relative"
+            href="cart.html">
+            <span class="material-symbols-outlined text-xl">shopping_cart</span>
+            <span class="text-[10px] font-medium">Cart</span>
+            <span
+                class="cart-badge absolute -top-1 left-1/2 ml-1 bg-primary text-[10px] text-slate-900 font-bold px-1.5 rounded-full shadow-sm ring-2 ring-white">2</span>
+        </a>
+        <a class="flex-1 flex flex-col items-center gap-1 text-slate-400 hover:text-slate-900 transition-colors"
+            href="login.html">
+            <span class="material-symbols-outlined text-xl">person</span>
+            <span class="text-[10px] font-medium">Profile</span>
+        </a>
+    </nav>
+</body>
+
+</html>
