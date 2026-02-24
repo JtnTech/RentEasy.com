@@ -28,22 +28,46 @@
         class="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 md:px-8 py-3 shadow-sm h-16 md:h-20 flex items-center">
         <div class="max-w-[1400px] mx-auto w-full flex items-center justify-between gap-4">
 
-            <div class="flex items-center gap-2 lg:gap-8 flex-shrink-0">
-                <a href="index.html" class="text-xl md:text-2xl font-800 tracking-tight text-slate-900 dark:text-white">
-                    Rent<span class="text-primary">Easy</span>
+            <div class="flex items-center gap-2 lg:gap-8 flex-shrink-0 bg-slate-900 px-4 py-2 rounded-xl">
+                <a href="index.html" class="text-xl md:text-2xl font-extrabold tracking-tight">
+                    <span class="text-white">Rent</span>
+                    <span class="text-green-500">Easy</span>
                 </a>
             </div>
 
             <!-- Central Search Bar (Desktop dominant) -->
-            <div
+            <!-- <div
                 class="hidden md:block flex-1 max-w-md w-full mx-auto relative group transform transition-all focus-within:scale-[1.02]">
                 <span
                     class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
                 <input id="search-input"
                     class="w-full pl-12 pr-4 py-2.5 bg-slate-100 border border-transparent rounded-xl focus:border-primary/50 focus:bg-white focus:ring-4 focus:ring-primary/10 text-sm outline-none transition-all shadow-inner placeholder:text-slate-400"
                     placeholder="Search items..." type="text" />
-            </div>
+            </div> -->
 
+            <!-- eaxapmle -->
+            <div
+                class="hidden md:block flex-1 max-w-md w-full mx-auto relative group ml-9 transform transition-all focus-within:scale-[1.02]">
+
+
+                <span
+                    class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">
+                    search
+                </span>
+
+
+                <input id="search-input"
+                    class="w-full pl-14 pr-20 py-2.5 bg-slate-100 border border-transparent rounded-xl focus:border-primary/50 focus:bg-white focus:ring-4 focus:ring-primary/10 text-sm outline-none transition-all shadow-inner placeholder:text-slate-400"
+                    placeholder="Search items..." type="text" />
+
+
+                <button
+                    class="absolute right-1 top-1/2 -translate-y-1/2 bg-primary text-white px-3 py-1.5 rounded-lg text-sm hover:bg-primary/90 transition-all">
+                    Search
+                </button>
+
+            </div>
+            <!-- example -->
             <!-- Desktop Nav Links -->
             <nav class="hidden md:flex items-center justify-center gap-6 text-sm font-semibold flex-1">
                 <a href="index.html" class="text-slate-500 hover:text-primary transition-colors">Home</a>
@@ -60,7 +84,7 @@
                 </a>
                 <a href="login.html"
                     class="hidden md:flex items-center justify-center w-10 h-10 border border-slate-200 hover:border-primary rounded-full hover:bg-slate-50 transition-colors">
-                    <span class="material-symbols-outlined text-slate-500">person</span>
+                    <span class="p-5 material-symbols-outlined text-slate-500">person</span>
                 </a>
             </div>
 

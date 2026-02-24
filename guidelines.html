@@ -4,19 +4,22 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Guidelines & Penalties - RentEasy</title>
+    <title>Rental Fee Breakdown - RentEasy</title>
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="js/tailwind-config.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-slate-50 font-display min-h-screen pb-24 font-display antialiased flex flex-col items-center">
+<body class="bg-slate-50 font-display min-h-screen pb-32 antialiased flex flex-col items-center">
 
-    <!-- Simple Header -->
+    <!-- Header -->
     <header
         class="w-full bg-white border-b border-slate-200 px-4 md:px-8 py-4 shadow-sm flex items-center gap-4 sticky top-0 z-50">
         <a href="index.html"
@@ -24,67 +27,134 @@
             <span class="material-symbols-outlined">arrow_back</span>
         </a>
         <h1 class="text-xl font-bold tracking-tight text-slate-900">
-            RentEasy Guidelines
+            Rental Fee Breakdown
         </h1>
     </header>
 
-    <main class="w-full max-w-3xl p-4 md:p-8 mt-4 md:mt-8">
+    <main class="w-full max-w-3xl p-4 md:p-8 mt-4 md:mt-8 space-y-8">
 
-        <div class="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-slate-100">
-            <div
-                class="w-16 h-16 bg-red-100 text-red-500 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
-                <span class="material-symbols-outlined text-4xl">gavel</span>
-            </div>
-
-            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">Guidelines & Penalty Policy</h2>
-            <p class="text-slate-600 mb-8 leading-relaxed text-sm md:text-base">
-                RentEasy thrives on the trust and responsibility of the student community. To ensure all items rotate
-                fairly among students needing them, strict penalty guidelines are enforced for late returns.
-            </p>
-
-            <div class="bg-slate-50 border-l-4 border-primary p-6 rounded-r-2xl mb-8">
-                <h3 class="font-bold text-slate-900 flex items-center gap-2 mb-2 text-lg">
-                    <span class="material-symbols-outlined text-primary">warning</span> Late Return Policy
-                </h3>
-                <p class="text-slate-700 leading-relaxed font-semibold">
-                    If any student does not return the product after their rental period (a semester or a month) ends,
-                    they will be liable to pay a <span class="bg-red-100 text-red-700 px-2 py-0.5 rounded">2% daily
-                        penalty</span> calculated on the original retail price of the item.
-                </p>
-            </div>
-
-            <div class="space-y-6">
-                <div class="border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-colors">
-                    <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-orange-500">account_balance</span> College Action
-                    </h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Failure to return the item and pay the associated penalties will result in a formal report being
-                        submitted to the College Administrative Office. Academic registration holds or disciplinary
-                        actions may be applied by the college until dues are cleared.
-                    </p>
+        <!-- Product Summary Card -->
+        <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <div class="flex items-center gap-5">
+                <div class="w-24 h-24 rounded-2xl bg-slate-100 border border-slate-200">
+                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzkTMuaW2tr4sSwy7jqnKD_hpF6x5AYBQPN3Blo8FQu2BYmUsipCA7NXvgDpYHQFiU4ufkIoPFkkrRU_psG3jNpZLHEqWMhjhSU1Xzf0XiHwQWelAp7xAjRPLVxBebyyJiqWmob9woK5CaQfm5ezqMlw3WRgFAMKpAvGP7_SBuaF7InGXHgXupqLZ7_XGUOJ5rOWEKn8juSwaEBuE0wk1Rn7mGRRYLZEghIvQqzcXKbuKIwjCXqaWS7cHOa6eCM3qPMK4bdcqx_t_Q"
+                        class="w-full h-full object-cover" />
                 </div>
-
-                <div class="border border-slate-200 rounded-2xl p-5 hover:border-slate-300 transition-colors">
-                    <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-blue-500">security</span> Loss or Damage
-                    </h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        If an item is lost or severely damaged beyond usable condition, the student must pay the
-                        remaining balance of the original retail price. The security deposit will be forfeited.
-                    </p>
+                <div>
+                    <p class="text-xs font-bold text-primary uppercase tracking-wider">Current Item</p>
+                    <h2 class="text-xl font-bold text-slate-900 mt-1">Professional White Lab Coat</h2>
+                    <p class="text-sm text-slate-500">Original Market Price: ₹600</p>
                 </div>
-            </div>
-
-            <div class="mt-12 text-center text-sm text-slate-400 font-medium">
-                Last Updated: August 2026
             </div>
         </div>
 
-        <!-- Global Watermark Credit Bottom -->
+        <!-- Pricing Section -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                <h3 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">payments</span>
+                    Monthly Rent
+                </h3>
+                <p class="text-3xl font-extrabold text-slate-900">₹36</p>
+                <p class="text-sm text-slate-500 mt-1">6% of ₹600 per month</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">
+                <h3 class="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-green-500">verified</span>
+                    Security Deposit
+                </h3>
+                <p class="text-3xl font-extrabold text-slate-900">₹100</p>
+                <p class="text-sm text-green-600 font-medium mt-1">100% Refundable</p>
+            </div>
+
+        </div>
+
+        <!-- Late Return Policy -->
+        <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-orange-500">schedule</span>
+                Late Return Policy
+            </h3>
+
+            <div class="space-y-4 text-sm text-slate-600">
+                <div class="flex justify-between">
+                    <span>Grace Period (0–3 Days)</span>
+                    <span class="font-semibold text-slate-900">₹10 Flat</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>After 3 Days</span>
+                    <span class="font-semibold text-slate-900">2% of MRP (₹12/day)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Damage Policy -->
+        <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100">
+            <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-red-500">healing</span>
+                Damage Charges
+            </h3>
+
+            <div class="space-y-3 text-sm text-slate-600">
+                <div class="flex justify-between">
+                    <span>Minor Damage</span>
+                    <span class="font-semibold text-slate-900">₹20</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Moderate Damage</span>
+                    <span class="font-semibold text-slate-900">₹60</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Major Damage</span>
+                    <span class="font-semibold text-slate-900">₹120</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lost Item Policy -->
+        <div class="bg-primary/5 border border-primary/20 rounded-3xl p-6 md:p-8 shadow-sm">
+            <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-primary">report</span>
+                Lost Item Policy
+            </h3>
+
+            <div class="space-y-4 text-sm text-slate-700">
+                <div class="bg-white rounded-xl p-4 border border-primary/20">
+                    <p class="font-semibold">Student Friendly Option</p>
+                    <p class="text-primary font-bold text-lg">₹650 Fixed</p>
+                </div>
+
+                <div class="text-center text-xs text-slate-400 font-bold uppercase">OR</div>
+
+                <div class="bg-slate-100 rounded-xl p-4">
+                    <p class="font-semibold">Strict Policy</p>
+                    <p>₹600 + ₹12 per day late</p>
+                    <p class="text-xs text-slate-500">(Max Cap ₹750)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Section -->
+        <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex justify-between items-center">
+            <div>
+                <p class="text-sm text-slate-500">Total Estimated (Rent + Deposit)</p>
+                <p class="text-2xl font-bold text-slate-900">₹136</p>
+            </div>
+
+            <button
+                class="bg-primary hover:bg-primary/90 text-slate-900 px-6 py-3 rounded-xl font-bold shadow-md transition active:scale-95 flex items-center gap-2">
+                Confirm & Rent
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+        </div>
+
+        <!-- Footer Credit -->
         <div class="mt-12 mb-4 flex justify-center w-full">
-            <p class="text-xs text-slate-400 font-medium">Developed by <span class="animated-developer">Jatin
-                    Kumar</span></p>
+            <p class="text-xs text-slate-400 font-medium">
+                Developed by <span class="animated-developer">Jatin Kumar</span>
+            </p>
         </div>
 
     </main>
